@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#link a.cative {
+  border-bottom: 2px solid saddlebrown;
+  color: red;
+}
