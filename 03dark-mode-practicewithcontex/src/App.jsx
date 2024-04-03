@@ -5,7 +5,7 @@ import Theme from './components/Theme'
 import { ThemeProvider } from './contex/themeContext'
 
 function App() {
-  const [themeMode, setThemeMode] = useState("light");
+  const [themeMode, setThemeMode] = useState("dark");
   const lightTheme = () => {
     setThemeMode('light');
   }
