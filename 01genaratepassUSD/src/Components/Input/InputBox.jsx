@@ -16,7 +16,7 @@ const InputBox = ({
         <div className={`w-full mx-auto bg-slate-300 p-5 my-8 rounded-lg ${className}`}>
             <div className="flex   mx-auto bg-slate-100 p-3 rounded-lg gap-5">
                 <div className="w-1/2 flex flex-col gap-4">
-                    <label htmlFor={amountInputId}>{label}</label>
+                    <label htmlhtmlFor={amountInputId}>{label}</label>
                     <input
                         id={amountInputId}
                         className='outline-none bg-transparent'

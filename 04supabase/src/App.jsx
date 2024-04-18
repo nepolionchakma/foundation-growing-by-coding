@@ -14,13 +14,6 @@ const App = () => {
     setUser(session?.user ?? null);
     setLoading(false);
 
-    // get user 
-    // const getuser = async () => {
-    //   const { data: { user } } = await supabase.auth.getUser();
-    //   // console.log(data, 'data', user.aud === "authenticated", 'user')
-    // }
-    // getuser();
-    // user if auth change
     const { data } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user ?? null);
       setLoading(false);

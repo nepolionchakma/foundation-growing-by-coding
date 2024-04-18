@@ -51,19 +51,19 @@ const Contact = () => {
                             onChange={(e) => setRange(e.target.value)}
                             type="range" />
 
-                        <label htmlFor="">Range : {range}</label>
+                        <label htmlhtmlFor="">Range : {range}</label>
                         <input
                             onClick={() => setNumberAllow((pre) => !pre)}
                             type="checkbox" />
-                        <label htmlFor="">Number</label>
+                        <label htmlhtmlFor="">Number</label>
                         <input
                             onClick={() => setCharecterAllow((pre) => !pre)}
                             type="checkbox" />
-                        <label htmlFor="">Charecter</label>
+                        <label htmlhtmlFor="">Charecter</label>
                     </div>
-                </div>
-            </div>
-        </div>
+                </div >
+            </div >
+        </div >
     );
 };
 
