@@ -5,6 +5,7 @@ import Home from './Components/Home/Home';
 import { AuthProvider } from './Components/AuthProvider/AuthProvider1';
 import LogIn from './Components/LogIn/LogIn';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const App = () => {
           element: <RequireAuth />,
           children: [
             {
+              path: "/dashboard",
+              element: <Dashboard />,
+            },
+            {
               path: "/about",
               element: <div>About</div>,
             },
@@ -32,6 +37,10 @@ const App = () => {
         {
           path: "/login",
           element: <LogIn />,
+        },
+        {
+          path: "/logo",
+          element: <div>logo</div>,
         },
 
 

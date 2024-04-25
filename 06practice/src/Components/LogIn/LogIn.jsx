@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthProvider/AuthProvider1';
 
@@ -13,20 +13,21 @@ const LogIn = () => {
     const from = location.state?.from?.pathname || '/';
 
     const { register, logIn, error } = useAuth();
-
-
-
-
-    console.log(location, 'location')
-    console.log(from, 'from')
+    // console.log(location, 'location')
+    // console.log(from, 'from')
     const handleRegister = (e) => {
         e.preventDefault()
         register(fullName, email, password)
     }
     const handleLogIn = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         logIn(email, password)
-        navigate(from, { replace: true })
+            .then(() => {
+                navigate(from, { replace: true })
+            }
+            )
+
+        // console.log(from)
     }
 
     return (

@@ -1,0 +1,146 @@
+/* import {
+  useState
+}
+
+from "react"
+
+import {
+  motion
+}
+
+from "framer-motion";
+
+import {
+  Activity,
+  LayoutDashboard,
+  Clock1,
+  BarChart2,
+  ArrowRightLeft,
+  HelpCircleIcon,
+  ChevronRight,
+  CrossIcon,
+  MenuSquareIcon
+}
+
+from 'lucide-react';
+
+import {
+  NavLink,
+  Outlet
+}
+
+from "react-router-dom";
+
+import {
+  CgChevronLeft,
+  CgHomeAlt,
+  CgAlarm,
+  CgLoadbarSound,
+  CgClose,
+  CgArrowsExchangeAlt,
+  CgDanger
+}
+
+from "react-icons/cg";
+
+
+function Body() {
+
+  const [isActive,
+  setIsActive]=useState(0)
+  const navLinks=[ {
+    name: 'Dashboard',
+      icon: CgHomeAlt,
+      link: '/'
+  }
+
+  ,
+  {
+  name: 'Activity',
+    icon: CgAlarm,
+    link: '/Activity'
+}
+
+,
+{
+name: 'Analytics',
+  icon: CgLoadbarSound,
+  link: '/Analytics'
+}
+
+,
+{
+name: 'Transactions',
+  icon: CgArrowsExchangeAlt,
+  link: '/Transactions'
+}
+
+,
+{
+name: 'Help Center',
+  icon: CgDanger,
+  link: '/Help'
+}
+
+,
+
+] const [isExpended,
+setIsExpended]=useState(true);
+
+
+return (<div className="flex gap-3" > <div className= {
+    "LeftSide p-3 " + (isExpended ? 'w-1/5' : 'w-[8.6%]')
+  }
+
+  > <div className="h-screen border-r-2 relative" > <div className="logo p-8 flex gap-2" > <Activity /> <h4 className= {
+    isExpended ? "visible duration-500" : 'hidden duration-500'
+  }
+
+  >Logo name</h4> </div> <div onClick= {
+    ()=> setIsExpended( !isExpended)
+  }
+
+  className="w-7 h-7 flex items-center -right-4 absolute top-14 rounded-full p-2 text-white bg-orange-500 duration-700" > {
+    isExpended ? <CgChevronLeft /> : <CgClose />
+  }
+
+  </div> <div className="p-4 duration-700" > {
+    navLinks.map((item, index)=> <div className=" duration-500" key= {
+        index
+      }
+
+      > <NavLink to= {
+        `$ {
+          item.link
+        }
+
+        `
+      }
+
+      className= {
+        "p-4 shadow rounded-md m-2 cursor-pointer flex gap-4 items-center" + (isActive===index ? " text-white bg-orange-500" : "")
+      }
+
+      onClick= {
+        ()=> setIsActive(index)
+      }
+
+      > {
+        <item.icon className="text-[25px]" />
+      }
+
+      <span className= {
+        isExpended ? "visible duration-500" : 'hidden duration-500'
+      }
+
+      > {
+        item.name
+      }
+
+      </span> </NavLink> </div>)
+  }
+
+  </div> </div> </div> <div className="RightSide p-3 w-4/5" > <Outlet /> </div> </div>)
+}
+
+export default Body */

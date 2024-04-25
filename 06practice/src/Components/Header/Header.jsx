@@ -15,7 +15,9 @@ const Header = () => {
                         <span className="ml-3 text-xl">Logo</span>
                     </Link>
                     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                        <Link to={'/dashboard'} className="mr-5 hover:text-white">Dashboard</Link>
                         <Link to={'/about'} className="mr-5 hover:text-white">About</Link>
+                        <Link to={'/logo'} className="mr-5 hover:text-white">logo</Link>
                         <Link to={'/contact'} className="mr-5 hover:text-white">Contact</Link>
                     </nav>
                     {
