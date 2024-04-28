@@ -1,10 +1,10 @@
 import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { useAuth } from '../Contexts/AuthContext';
+import { useMyContext } from '../Contexts/MyContext';
 
 
 const RequireAuth = () => {
-  const { session, user, loading } = useAuth()
+  const { session, user, loading } = useMyContext()
   const location = useLocation()
 
   // working 1 //

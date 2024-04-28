@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../../Contexts/AuthContext';
+import { useMyContext } from '../../../Contexts/MyContext';
 
 const LogIn = () => {
   const [isRegister, setIsRegister] = useState(true);
@@ -8,11 +8,11 @@ const LogIn = () => {
   const [password, setPassword] = useState('');
   const [fullName, setFullName] = useState('');
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const from = location.state?.from?.pathname || '/';
 
-  const { register, logIn, error } = useAuth();
+  const { register, logIn, error } = useMyContext();
   // console.log(location, 'location')
   // console.log(from, 'from')
   const handleRegister = (e) => {
@@ -23,7 +23,7 @@ const LogIn = () => {
     e.preventDefault();
     logIn(email, password)
       .then(() => {
-        navigate(from, { replace: true })
+        // navigate(from, { replace: true })
       }
       )
 

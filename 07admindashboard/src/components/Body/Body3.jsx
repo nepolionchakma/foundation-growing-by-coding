@@ -22,6 +22,7 @@ import {
   CgProfile,
   CgChevronRight
 } from "react-icons/cg";
+import { useMyContext } from "@/Contexts/MyContext";
 
 function Body3() {
   // const location = useLocation()
@@ -39,10 +40,8 @@ function Body3() {
   // const indexNumber = activeDataIndex
   const [isActive, setIsActive] = useState(idIsActive)
   const [isExpanded, setIsExpanded] = useState(id)
-  // console.log(isActive, typeof activeDataIndex)
-  // console.log(location.pathname)
-  // console.log(urlSlice, isActive)
-  // console.log(isActive == urlSlice)
+  const { session } = useMyContext()
+
   const navLinks = [
     {
       name: 'Dashboard',
@@ -50,9 +49,9 @@ function Body3() {
       link: '/'
     },
     {
-      name: 'Add_User',
+      name: 'Add_Post',
       icon: CgProfile,
-      link: '/AddUser'
+      link: '/AddPost'
     },
     {
       name: 'Activity',
@@ -121,7 +120,7 @@ function Body3() {
                       </div>
                       {!isExpanded && (
                         <div
-                          className={`absolute left-full rounded-md px-2 py-1 ml-2 bg-orange-100 text-orange-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0 duration-500`}
+                          className={`absolute left-full rounded-md px-2 py-1 ml-2 bg-orange-100 text-orange-800 text-sm invisible opacity-5 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0 duration-500`}
                         >
                           {item.name}
                         </div>
@@ -134,10 +133,16 @@ function Body3() {
             <div className="flex items-center gap-3 bg-slate-50 justify-between p-4">
               <h4>LD</h4>
               <div className={`flex flex-col overflow-hidden transition-all duration-700 ${isExpanded ? 'w-[100%]' : 'w-0'}`}>
-                <h3>nepo</h3>
-                <span>neo@gmail.com</span>
+                <p className='text-center m-3'>
+                  {
+                    session?.user.user_metadata.full_name
+                  }
+                  <br />
+                  {
+                    session?.user?.email
+                  }
+                </p>
               </div>
-              <span>\\||//</span>
             </div>
           </nav>
         </aside>

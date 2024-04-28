@@ -6,7 +6,10 @@ import Activity from "../Body/Activity/Activity"
 import Analytics from "../Body/Analytics/Analytics"
 import Transactions from "../Body/Transactions/Transactions"
 import Help from "../Body/Help/Help"
-import AddUser from "../Body/AddUser/AddUser"
+import AddPost from "../Body/AddPost/AddPost"
+import LogIn from "../Body/LogIn/LogIn"
+import { PostProvider } from "@/Contexts/PostContext"
+import InviteUser from "../InviteUser/InviteUser"
 
 function LayOut() {
   const router = createBrowserRouter([
@@ -19,8 +22,13 @@ function LayOut() {
           element: <Dashboard />
         },
         {
-          path: '/AddUser',
-          element: <AddUser />
+          path: '/LogIn',
+          element: <LogIn />
+        },
+
+        {
+          path: '/AddPost',
+          element: <AddPost />
         },
         {
           path: '/Activity',
@@ -39,9 +47,14 @@ function LayOut() {
           element: <Help />
         },
       ]
-    }
+    },
+    {
+      path: '/InvitedUser',
+      element: <InviteUser />
+    },
   ])
   return (
+
     <RouterProvider router={router} />
   )
 }
